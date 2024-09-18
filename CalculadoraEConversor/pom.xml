@@ -12,7 +12,7 @@
         <exec.mainClass>Telas.TelaPrincipal</exec.mainClass>
     </properties>
     <dependencies>
-        <dependency> <!-- Coloca a bilbioteca externa "exp4j" de versão 0.4.8 como depedencia onde irá ser gerenciada pelo Maven link para atribuir biblioteca https://mvnrepository.com/artifact/net.objecthunter/exp4j/0.4.8 -->
+        <dependency> <!-- Coloca a bilbioteca externa "exp4j" de versão 0.4.8 como depedencia onde irá ser gerenciada pelo Maven, link para atribuir biblioteca https://mvnrepository.com/artifact/net.objecthunter/exp4j/0.4.8 -->
             <groupId>net.objecthunter</groupId>
             <artifactId>exp4j</artifactId>
             <version>0.4.8</version>

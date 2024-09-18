@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Telas;
+
 /**
  *
  * @author miguel_a_andrade
@@ -17,33 +18,31 @@ import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class TelaPrincipal extends javax.swing.JFrame {
-       
+
     /**
      * Creates new form TelaPrincipal
      */
-    
     private String visorEquacoes = ""; // Variavel para valor atual do visor de forma global; //
     private String equacaoParaSalvar = ""; // Variavel para a equação completa com resultado para ser salva; //
-    
-   // Metodo calculo() para lidar com a equação em formato de String seguindo a logica de como a equação deve ser calculada usando Exp4j que é uma biblioteca para expressões matematicas; //
-    private double calculo(){
-        
+
+    // Metodo calculo() para lidar com a equação em formato de String seguindo a logica de como a equação deve ser calculada, usando Exp4j que é uma biblioteca para expressões matematicas; //
+    private double calculo() {
+
         //Achei a biblioteca Exp4j nesse link -> https://stackoverflow.com/questions/7258538/method-for-evaluating-math-expressions-in-java  ;//
-        
         visorEquacoes = visorEquacoes.replace('÷', '/'); // Retirar todos os '÷' e colocar '/' no lugar para devido calculo do Exp4j; //
         visorEquacoes = visorEquacoes.replace('x', '*'); // Retirar todos os 'x' e colocar '*' no lugar para devido calculo do Exp4j; //
-        
+
         // Criando a expressão com Exp4j; com base nesse link -> https://www.objecthunter.net/exp4j/apidocs/net/objecthunter/exp4j/ExpressionBuilder.html e https://stackoverflow.com/questions/7258538/method-for-evaluating-math-expressions-in-java  //
         Expression expressao = new ExpressionBuilder(visorEquacoes).build();
         //  Cria uma instância de Expression(Expressão matematica construida)usando o build a partir da string que representa a expressão matemática; //
 
-        //  Retorna resultado do metódo evaluate() que pertence a classe Expression para calcular o valor da expressão onde irá retornar um double; //
+        //  Retorna resultado do metódo evaluate() que pertence a classe Expression para calcular a expressão onde irá retornar um double; //
         return expressao.evaluate();
     }
-    
+
     public TelaPrincipal() {
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(null); // Local de inicio do jframe sendo o centro; //
     }
 
     /**
@@ -55,7 +54,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel6 = new javax.swing.JPanel();
+        jpCalculadora = new javax.swing.JPanel();
         jbtIgual = new javax.swing.JButton();
         jbtMemoria = new javax.swing.JButton();
         jbtDecimal = new javax.swing.JButton();
@@ -82,15 +81,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jmbPrincipal = new javax.swing.JMenuBar();
         jmbConversor = new javax.swing.JMenu();
         jmbCoversorDeVelocidade = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calculadora");
         setMinimumSize(new java.awt.Dimension(309, 370));
         setPreferredSize(new java.awt.Dimension(309, 340));
         setResizable(false);
         setSize(new java.awt.Dimension(309, 400));
 
-        jPanel6.setBackground(new java.awt.Color(51, 51, 51));
+        jpCalculadora.setBackground(new java.awt.Color(51, 51, 51));
 
         jbtIgual.setBackground(new java.awt.Color(102, 255, 102));
         jbtIgual.setForeground(new java.awt.Color(255, 255, 255));
@@ -311,43 +310,43 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpCalculadoraLayout = new javax.swing.GroupLayout(jpCalculadora);
+        jpCalculadora.setLayout(jpCalculadoraLayout);
+        jpCalculadoraLayout.setHorizontalGroup(
+            jpCalculadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpCalculadoraLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jpCalculadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpCalculadoraLayout.createSequentialGroup()
                         .addGap(7, 7, 7)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jpCalculadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpCalculadoraLayout.createSequentialGroup()
+                                .addGroup(jpCalculadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jpCalculadoraLayout.createSequentialGroup()
                                         .addComponent(jbtBotao7, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jbtBotao8, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                    .addGroup(jpCalculadoraLayout.createSequentialGroup()
                                         .addComponent(jbtBotao4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jbtBotao5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jpCalculadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jbtBotao9, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jbtBotao6, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
+                            .addGroup(jpCalculadoraLayout.createSequentialGroup()
                                 .addComponent(jbtBotao1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jbtBotao2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jbtBotao3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jpCalculadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jbtAdicao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jbtSubtracao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jbtDivisao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jtfVisor)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGroup(jpCalculadoraLayout.createSequentialGroup()
                         .addComponent(jbtCE, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jbtApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -357,11 +356,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(jbtMemoriaClear, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jbtMultiplicacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGroup(jpCalculadoraLayout.createSequentialGroup()
                         .addComponent(jbtMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jbtIgual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGroup(jpCalculadoraLayout.createSequentialGroup()
                         .addComponent(jbtBotao0, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jbtDecimal, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
@@ -369,48 +368,48 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(jbtResto, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        jpCalculadoraLayout.setVerticalGroup(
+            jpCalculadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpCalculadoraLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jtfVisor, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jpCalculadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtMultiplicacao)
                     .addComponent(jbtCE, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtArmazenarMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtMemoriaClear, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jpCalculadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jpCalculadoraLayout.createSequentialGroup()
                         .addComponent(jbtAdicao)
                         .addGap(12, 12, 12)
                         .addComponent(jbtSubtracao))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(jpCalculadoraLayout.createSequentialGroup()
+                        .addGroup(jpCalculadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jbtBotao7)
                             .addComponent(jbtBotao8)
                             .addComponent(jbtBotao9)
                             .addComponent(jbtDivisao))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jpCalculadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jbtBotao6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addGroup(jpCalculadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jbtBotao5)
                                 .addComponent(jbtBotao4)))
                         .addGap(8, 8, 8)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jpCalculadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jbtBotao3)
                             .addComponent(jbtBotao2)
                             .addComponent(jbtBotao1))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jpCalculadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtBotao0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbtDecimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbtResto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(5, 5, 5)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jpCalculadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtMemoria)
                     .addComponent(jbtIgual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(22, 22, 22))
@@ -428,20 +427,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jmbPrincipal.add(jmbConversor);
 
-        jMenu2.setText("Sair");
-        jmbPrincipal.add(jMenu2);
-
         setJMenuBar(jmbPrincipal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpCalculadora, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jpCalculadora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         setBounds(0, 0, 334, 313);
@@ -449,6 +445,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jmbCoversorDeVelocidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmbCoversorDeVelocidadeActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        TelaConversor tela = new TelaConversor();
+        tela.setVisible(true);
     }//GEN-LAST:event_jmbCoversorDeVelocidadeActionPerformed
 
     private void jtfVisorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfVisorActionPerformed
@@ -464,10 +463,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jbtApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtApagarActionPerformed
         // TODO add your handling code here:
         String stringVisor = jtfVisor.getText(); // Cria uma String stringVisor para salvar o valor do texto atual do Visor; //
-        int tamanho = stringVisor.length(); // Cria um int para salvar o tamanho do stringVisor; //
-        stringVisor = stringVisor.substring(0, tamanho - 1); // Salva o resultado da substring para o stringVisor, substring feita começando do indice 0 do stringVisor, até o tamanho -1 (removendo ultimo caracter; //
-        visorEquacoes = stringVisor; // Atualiza variavel global para valor do stringVisor com um caracter removido; //
-        jtfVisor.setText(visorEquacoes); // Insere texto da variavel global no visor; //
+        if (!stringVisor.isEmpty()) { // Verifica se está vazio para não rodar codigo sem motivo; //
+            int tamanho = stringVisor.length(); // Cria um int para salvar o tamanho do stringVisor; //
+            stringVisor = stringVisor.substring(0, tamanho - 1); // Salva o resultado da substring para o stringVisor, substring feita começando do indice 0 do stringVisor, até o tamanho -1 (removendo ultimo caracter; //
+            visorEquacoes = stringVisor; // Atualiza variavel global para valor do stringVisor com um caracter removido; //
+            jtfVisor.setText(visorEquacoes); // Insere texto da variavel global no visor; //
+        }
     }//GEN-LAST:event_jbtApagarActionPerformed
 
     private void jbtCEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtCEActionPerformed
@@ -478,19 +479,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jbtMultiplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtMultiplicacaoActionPerformed
         // TODO add your handling code here:
-        visorEquacoes = jtfVisor.getText()+" x "; // Atualiza variavel global, pegando o texto do visor adicionando o " x "; //
+        visorEquacoes = jtfVisor.getText() + " x "; // Atualiza variavel global, pegando o texto do visor adicionando o " x "; //
         jtfVisor.setText(visorEquacoes); // Insere texto da variavel global no visor; //
     }//GEN-LAST:event_jbtMultiplicacaoActionPerformed
 
     private void jbtDivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtDivisaoActionPerformed
         // TODO add your handling code here:
-        visorEquacoes = jtfVisor.getText()+" ÷ "; // Atualiza variavel global, pegando o texto do visor adicionando o " ÷ "; //
+        visorEquacoes = jtfVisor.getText() + " ÷ "; // Atualiza variavel global, pegando o texto do visor adicionando o " ÷ "; //
         jtfVisor.setText(visorEquacoes); // Insere texto da variavel global no visor; //
     }//GEN-LAST:event_jbtDivisaoActionPerformed
 
     private void jbtAdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtAdicaoActionPerformed
         // TODO add your handling code here:
-        visorEquacoes = jtfVisor.getText()+" + "; // Atualiza variavel global, pegando o texto do visor adicionando o " + "; //
+        visorEquacoes = jtfVisor.getText() + " + "; // Atualiza variavel global, pegando o texto do visor adicionando o " + "; //
         jtfVisor.setText(visorEquacoes); // Insere texto da variavel global no visor; //
     }//GEN-LAST:event_jbtAdicaoActionPerformed
 
@@ -532,7 +533,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jbtSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtSubtracaoActionPerformed
         // TODO add your handling code here:
-        visorEquacoes = jtfVisor.getText()+" - "; // Atualiza variavel global, pegando o texto do visor adicionando o " - "; //
+        visorEquacoes = jtfVisor.getText() + " - "; // Atualiza variavel global, pegando o texto do visor adicionando o " - "; //
         jtfVisor.setText(visorEquacoes); // Insere texto da variavel global no visor; //
     }//GEN-LAST:event_jbtSubtracaoActionPerformed
 
@@ -566,7 +567,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             // Tenta usar o metodo calculo() para calcular e exibir o resultado da expressão matematica em formato de string, salvando toda a equação na variavel global "equacaoParaSalvar"; //
             equacaoParaSalvar = jtfVisor.getText();
             jtfVisor.setText(Double.toString(calculo()));
-            equacaoParaSalvar += " = "+Double.toString(calculo());
+            equacaoParaSalvar += " = " + Double.toString(calculo());
         } catch (Exception e) {
             // Se equacoes() falhar, mostra a mensagem de erro no visor; //
             jtfVisor.setText("Erro na sintaxe");
@@ -578,18 +579,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jbtArmazenarMemoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtArmazenarMemoriaActionPerformed
         // TODO add your handling code here:
-        if(equacaoParaSalvar.isEmpty()){ // Verifica se a equacaoParaSalvar está vazia; //
+        if (equacaoParaSalvar.isEmpty()) { // Verifica se a equacaoParaSalvar está vazia; //
             // Se estiver vazia, mostra o paneil do JOption informando a falta de equação para ser salva; //
             JOptionPane.showMessageDialog(null, "Não há equação para ser salva!");
-        }else { // Se equacaoParaSalvar não estiver vazia; //
+        } else { // Se equacaoParaSalvar não estiver vazia; //
             try (PrintWriter gravadorMemoria = new PrintWriter(new FileWriter("memoria.txt", true))) {
                 // Cria um novo PrintWriter gravadorMemoria(Permite escrever strings e outras formas de saída facilmente) que será usado para escrever no arquivo "memoria.txt"; //
                 // O FileWriter abre o arquivo memoria.txt para escrita e o segundo argumento 'true' no FileWriter significa que estrá sendo aberto o arquivo no modo de anexo (append); //
                 // Usando o modo de anexo ( como segundo argumento em "true") , irá fazer o novo conteúdo ser adicionado ao final do arquivo sem sobrescrever o conteúdo que já existe; //
-                
+
                 gravadorMemoria.println(equacaoParaSalvar); // Escreve a equação que está como String no arquivo, adicionando uma nova linha no final; //
-                
-                JOptionPane.showMessageDialog(null, "A equação: "+equacaoParaSalvar+" foi salva com sucesso!"); // Exibe um painel JOption para informar que a equação foi salva com sucesso; //
+
+                JOptionPane.showMessageDialog(null, "A equação: " + equacaoParaSalvar + " foi salva com sucesso!"); // Exibe um painel JOption para informar que a equação foi salva com sucesso; //
             } catch (IOException e) { // Caso falhar exibe um painel JOption com a mensagem de erro; //
                 JOptionPane.showMessageDialog(null, "Erro ao salvar o arquivo: " + e.getMessage());
             } finally { // Limpa a equacaoParaSalvar falhando ou não; //
@@ -600,30 +601,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jbtRestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtRestoActionPerformed
         // TODO add your handling code here:
-        visorEquacoes = jtfVisor.getText()+" % "; // Atualiza variavel global, pegando o texto do visor adicionando o " % "; //
+        visorEquacoes = jtfVisor.getText() + " % "; // Atualiza variavel global, pegando o texto do visor adicionando o " % "; //
         jtfVisor.setText(visorEquacoes); // Insere texto da variavel global no visor; //
     }//GEN-LAST:event_jbtRestoActionPerformed
 
     private void jbtMemoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtMemoriaActionPerformed
         // TODO add your handling code here:
         // Cria uma instância de StringBuilder, onde é usada para construir uma string de forma eficiente, permitindo concatenar várias strings sem criar novos objetos para cada operaçã; //
-            StringBuilder conteudo = new StringBuilder();
-            
-            // Adiciona o texto: "Memória da Calculadora" ao StringBuilder; //
-            conteudo = conteudo.append("======Memoria da Calculadora======\n-----------------------------"
-                    + "--------------------------\n");
-    
+        StringBuilder conteudo = new StringBuilder();
+
+        // Adiciona o texto: "Memória da Calculadora" ao StringBuilder; //
+        conteudo = conteudo.append("======Memoria da Calculadora======\n-----------------------------"
+                + "--------------------------\n");
+
         try (BufferedReader leitor = new BufferedReader(new FileReader("memoria.txt"))) {
-            // Faz um Try Catch tentando instanciar um BufferedReader leitor, usando o arquivo memoria.txt para ser lido; //
+            // Faz um Try Catch tentando instanciar um BufferedReader de nome: "leitor", usando o arquivo memoria.txt para ser lido; //
             // O BufferedReader é utilizado para ler o arquivo de forma eficiente, especialmente ao ler linha por linha;//
-            
+
             // Inicializa uma variável para armazenar as linhas lidas do arquivo; //
             String linha;
-            
+
             // Loop para ler cada linha do arquivo "memoria.txt" até que não haja mais linhas; //
             while ((linha = leitor.readLine()) != null) {
-                
-            // Adiciona a linha lida ao StringBuilder, seguida por uma nova linha e um separador; //
+
+                // Adiciona a linha lida ao StringBuilder, seguida por uma nova linha e um separador; //
                 conteudo.append(linha).append("\n").append("-----------------------"
                         + "--------------------------------\n");
             }
@@ -632,7 +633,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao ler o arquivo: " + e.getMessage());
             return;
         }
-    
+
         // Exibe o conteúdo do arquivo em um JOptionPane; //
         JOptionPane.showMessageDialog(null, conteudo.toString());
     }//GEN-LAST:event_jbtMemoriaActionPerformed
@@ -641,7 +642,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         try (FileWriter escritor = new FileWriter("memoria.txt", false)) {
             // Escreve no arquivo memoria.txt nada, o tornando vazio e assim "deletado"; //
-            
+
             // Informa se houve o sucesso ao limpar memoria; //
             JOptionPane.showMessageDialog(null, "A memoria foi limpada com sucesso!!");
         } catch (IOException e) { // Caso não; //
@@ -649,7 +650,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao limpar o arquivo: " + e.getMessage());
         }
     }//GEN-LAST:event_jbtMemoriaClearActionPerformed
-    
+
     /**
      * @param args the command line arguments
      */
@@ -686,8 +687,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JButton jbtAdicao;
     private javax.swing.JButton jbtApagar;
     private javax.swing.JButton jbtArmazenarMemoria;
@@ -713,6 +712,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jmbConversor;
     private javax.swing.JMenuItem jmbCoversorDeVelocidade;
     private javax.swing.JMenuBar jmbPrincipal;
+    private javax.swing.JPanel jpCalculadora;
     private javax.swing.JTextField jtfVisor;
     // End of variables declaration//GEN-END:variables
 }
